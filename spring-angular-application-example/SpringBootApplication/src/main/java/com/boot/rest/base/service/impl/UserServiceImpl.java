@@ -1,7 +1,12 @@
-package com.boot.rest.base.service;
+package com.boot.rest.base.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import com.boot.rest.base.dto.SocietySearch;
+import com.boot.rest.base.model.Company;
+import com.boot.rest.base.model.Society;
+import com.boot.rest.base.service.UserService;
 import jakarta.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,14 +22,42 @@ public class UserServiceImpl implements UserService {
   private UserRepository userRepository;
 
   @Override
+  public List<Society> getSocieties() {
+    return new ArrayList<>();
+  }
+
+  @Override
   public User insert(User userVO) {
     return this.userRepository.save(userVO);
+  }
+
+  @Override
+  public User login(User loginuser) {
+
+    List<User> lst = findAll();
+    if(lst!=null && lst.size() > 0)
+    {
+      for(User user: lst)
+      {
+        if(user.getUsername().equalsIgnoreCase(loginuser.getUsername()))
+        {
+          return user;
+        }
+      }
+    }
+    return null;
   }
 
   @Override
   public List<User> findAll() {
 
     return this.userRepository.findAll();
+  }
+
+  @Override
+  public List<Company> searchBySocietyAndChargeDate(SocietySearch societySearch) {
+
+    return new ArrayList<>();
   }
 
   @Override
