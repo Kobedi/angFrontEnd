@@ -1,0 +1,19 @@
+<div class="container">
+    <h2 class="text-center">Calculate Loyalty</h2>
+    <form (ngSubmit) = "onSubmit()">
+        <div class="form-group">
+            <label for="title"> First Name</label>
+            <input type="text" class="form-control" id="title" [(ngModel)]="loyalty.title" name="title">
+        </div>
+        <div class="form-group">
+            <label for="description"> Last Name</label>
+            <input type="text" class="form-control" id="description" [(ngModel)]="loyalty.description" name="description">
+        </div>
+        <div class="form-group">
+            <label for="fomularImageURL">Username</label>
+            <input type="text" class="form-control" id="fomularImageURL" [(ngModel)]="loyalty.fomularImageURL" name="fomularImageURL">
+        </div>
+        
+        <button class="btn btn-success mt-2" type="submit">Calculate</button>
+     </form>
+</div>

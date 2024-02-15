@@ -31,10 +31,11 @@ export class UserCreateComponent implements OnInit {
 
   redirectToUserList() {
     this.router.navigate(['/users']);
+    
   }
 
   onSubmit() {
-    console.log(this.user);
+    console.log("Saving user to data store");
     this.saveUser();
   }
 }

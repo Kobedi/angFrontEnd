@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { Loyalty } from '../model/loyalty';
 import { Router } from '@angular/router';
+import { LoyaltyServiceService } from '../services/loyalty-service.service';
 import { UserService } from '../services/user.service';
-import { User } from '../user.model';
 import { Society } from '../society.model';
+import { User } from '../user.model';
 
 @Component({
-  selector: 'app-user-list',
-  templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+  selector: 'app-loyalty-list',
+  templateUrl: './loyalty-list.component.html',
+  styleUrls: ['./loyalty-list.component.css']
 })
-export class UserListComponent implements OnInit {
+export class LoyaltyListComponent implements OnInit {
 
   users: User[] | undefined;
 
@@ -20,7 +22,7 @@ export class UserListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getUsers();
+    this.getSocieties();
   }
 
   private getUsers() {
@@ -28,13 +30,9 @@ export class UserListComponent implements OnInit {
       this.users = data;
     });
 
-    console.log("Now testing society list");
-    this.getSocieties();
   }
 
   private getSocieties() {
-
-
     this.userService.getSocietyList().subscribe(data => {
       this.societies = data;
       console.log("Data is " + this.societies);
@@ -64,6 +62,5 @@ export class UserListComponent implements OnInit {
     //});
     console.log("Deleting a society")
   }
-
 
 }

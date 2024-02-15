@@ -1,0 +1,28 @@
+<div class="container">
+    
+    <h2 class="text-center">Society List</h2>
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <th>Society Id</th>
+                <th>Society Name</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let society of societies">
+                <td> {{ society.id }} </td>
+                <td> {{ society.name }} </td>
+                
+                <td>
+                    <button (click) = "updateSociety(society.id)" class="btn btn-info">Update Society</button>
+                    <button (click) = "deleteSociety(society.id)" class="btn btn-danger">Delete Society</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>
+
+
