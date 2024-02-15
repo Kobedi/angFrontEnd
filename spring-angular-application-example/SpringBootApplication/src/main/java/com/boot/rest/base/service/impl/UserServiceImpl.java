@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService {
         }
       }
     }
-    return null;
+    return new User();
   }
 
   @Override

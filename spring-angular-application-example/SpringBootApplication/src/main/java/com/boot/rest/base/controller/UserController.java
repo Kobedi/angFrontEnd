@@ -43,6 +43,7 @@ public class UserController {
 	@ResponseStatus(value = HttpStatus.OK)
 	public User login(@RequestBody User user) {
 
+		System.out.println("Logging......" + user);
 		return this.userService.login(user);
 	}
 
