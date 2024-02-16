@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 //import { LoyaltyComponent } from './loyalty/loyalty/loyalty.component';
 import { CalculateLoyaltyComponent } from './calculate-loyalty/calculate-loyalty.component';
 import { UserLoginComponent } from './user-login/user-login.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { UserLoginComponent } from './user-login/user-login.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
